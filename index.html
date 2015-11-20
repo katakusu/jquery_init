@@ -32,9 +32,14 @@
     //$(document).ready(function(){
     $(function(){
       // セレクタ・メソッド
-      // html:そのまま　id:# class:.
+      // A > B : Aの直下のB要素
+      // A   B : A以下のB要素すべて
+      // A , B : AとBの要素
+      // A + B : Aに隣接するB要素
       $("#sub").css('color', 'red');
-      $(".item").css('color', 'blue');
+      //$("#main .item").css('color', 'blue');
+      //$("p, .item").css('color', 'blue');
+      $(".item + .item").css('color', 'yellow');
     });
   </script>
 </body>
