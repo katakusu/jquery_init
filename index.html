@@ -5,6 +5,8 @@
   <title>JQuery</title>
 </head>
 <body>
+  <h1>スクレイピング</h1>
+  <h2>練習用</h2>
   <p>練習用ボタン</p>
   <ul id="main">
     <li class="item">0</li>
@@ -26,8 +28,13 @@
       </ul>
     </li>
   </ul>
+  <h2><?= 'メインコンテンツ' ?></h2>
+  <div id="scraping">
 
-  <script src="./jquery/jquery-1.11.3.js"></script>
+  </div>
+
+  <script type="text/javascript" src="./jquery/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="./jquery/jquery.xdomainajax.js"></script>
   <script>
     //$(document).ready(function(){
     $(function(){
@@ -40,6 +47,19 @@
       //$("#main .item").css('color', 'blue');
       //$("p, .item").css('color', 'blue');
       $(".item + .item").css('color', 'yellow');
+    });
+  </script>
+  <script>
+    $(function(){
+      $.ajax({
+        url : 'http://www.yahoo.co.jp/',
+        type : 'GET',
+        success : function(data){
+          // 基本形
+          content = $(res.responseText);
+          console.log(content);
+        }
+      });
     });
   </script>
 </body>
